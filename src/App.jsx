@@ -13,10 +13,10 @@ function App() {
       {/* --- HERO SECTION --- */}
       <Navbar onTakeAssessment={() => setShowForm(true)} />
 
-      <main className="max-w-7xl mx-auto px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-24 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
-          <span className="text-blue-600 font-semibold tracking-wide uppercase text-sm">Mental Health Matters</span>
-          <h2 className="text-5xl md:text-6xl font-extrabold mt-4 leading-tight">
+          <span className="text-blue-600 font-semibold tracking-wide uppercase text-xs md:text-sm">Mental Health Matters</span>
+          <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-tight">
             Your Mental Well-being <br />
             <span className="text-blue-600">is a Priority.</span>
           </h2>
@@ -28,11 +28,11 @@ function App() {
           <div className="mt-10 flex gap-4">
             <button
               onClick={() => setShowForm(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-200 transition-all hover:-translate-y-1"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-lg shadow-blue-200 transition-all hover:-translate-y-1"
             >
               Start Free Assessment
             </button>
-            <a href="#why-aware" className="px-8 py-4 rounded-xl font-bold text-lg text-slate-700 hover:bg-slate-100 transition">
+            <a href="#why-aware" className="px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg text-slate-700 hover:bg-slate-100 transition">
               Learn More
             </a>
           </div>
@@ -47,7 +47,7 @@ function App() {
       </main>
 
       {/* --- WHY AWARE SECTION --- */}
-      <section id="why-aware" className="bg-white py-20 px-8">
+      <section id="why-aware" className="bg-white py-12 md:py-20 px-4 md:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-12">Why being aware matters?</h3>
           <div className="grid md:grid-cols-3 gap-8">
