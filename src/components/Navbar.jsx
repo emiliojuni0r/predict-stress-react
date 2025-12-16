@@ -26,6 +26,14 @@ export default function Navbar() {
                             Why Aware
                         </a>
                     </li>
+                                        <li>
+                        <a
+                            href="#how-it-works"
+                            className="hover:text-blue-600 transition"
+                        >
+                            How It Works
+                        </a>
+                    </li>
                     <li>
                         <a
                             href="#footer"

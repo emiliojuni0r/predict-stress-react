@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// --- KOMPONEN UI: RADIO GROUP (TAILWIND) ---
+// radio grup component
 const RadioGroup = ({ label, name, options, value, onChange, required = true }) => (
   <div className="mb-6 p-6 bg-white rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
     <p className="font-semibold text-slate-800 mb-4 text-sm md:text-base">{label}</p>
@@ -8,12 +8,12 @@ const RadioGroup = ({ label, name, options, value, onChange, required = true }) 
       {options.map((opt) => {
         const isSelected = parseInt(value) === opt.value;
         return (
-          <label 
-            key={opt.value} 
+          <label
+            key={opt.value}
             className={`
               relative flex flex-col items-center justify-center p-3 rounded-lg border-2 cursor-pointer transition-all duration-200
-              ${isSelected 
-                ? 'border-blue-500 bg-blue-50 text-blue-700' 
+              ${isSelected
+                ? 'border-blue-500 bg-blue-50 text-blue-700'
                 : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300 hover:bg-slate-50'}
             `}
           >
@@ -23,7 +23,7 @@ const RadioGroup = ({ label, name, options, value, onChange, required = true }) 
               value={opt.value}
               checked={isSelected}
               onChange={onChange}
-              className="absolute opacity-0 w-0 h-0" 
+              className="absolute opacity-0 w-0 h-0"
               required={required}
             />
             <div className={`w-4 h-4 rounded-full border mb-2 flex items-center justify-center
@@ -49,7 +49,7 @@ const StressQuestionnaire = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [canSubmit, setCanSubmit] = useState(false); // Safety state untuk tombol submit
-  
+
   const topRef = useRef(null); // Ref untuk scroll ke atas
   const baseurl = import.meta.env.VITE_API_BASE_URL;
 
@@ -105,10 +105,10 @@ const StressQuestionnaire = () => {
 
     const scores = calculateScores();
     const payload = {
-        anxiety_level: scores.anxiety,
-        depression: scores.depression,
-        self_esteem: scores.self_esteem,
-        ...answers // Mengirim sisa field secara dinamis
+      anxiety_level: scores.anxiety,
+      depression: scores.depression,
+      self_esteem: scores.self_esteem,
+      ...answers // Mengirim sisa field secara dinamis
     };
 
     try {
@@ -136,20 +136,20 @@ const StressQuestionnaire = () => {
       {/* Anchor untuk scroll ke atas */}
       <div ref={topRef} />
 
-      <h1 className="text-2xl md:text-3xl font-bold text-center text-slate-800 mb-2">Student Stress Assessment</h1>
+      <h1 className="text-xl md:text-3xl font-bold text-center text-slate-800 mb-2">Student Stress Assessment</h1>
       <p className="text-center text-slate-500 mb-6 text-sm">Please answer honestly. Your data is processed privately.</p>
 
       {/* Progress Bar */}
       <div className="h-2 w-full bg-slate-200 rounded-full mb-8 overflow-hidden">
-        <div 
-          className="h-full bg-blue-600 transition-all duration-500 ease-out" 
+        <div
+          className="h-full bg-blue-600 transition-all duration-500 ease-out"
           style={{ width: `${step * 25}%` }}
         ></div>
       </div>
 
       {!result ? (
         <form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
-          
+
           {step === 1 && (
             <div className="animate-fade-in">
               <h2 className="text-xl font-bold text-slate-700 flex items-center mb-6">
@@ -213,23 +213,23 @@ const StressQuestionnaire = () => {
 
           <div className="flex justify-between items-center mt-10 pt-6 border-t border-slate-100">
             {step > 1 ? (
-              <button type="button" onClick={() => setStep(step - 1)} className="px-6 py-2.5 rounded-lg font-medium text-slate-600 hover:bg-slate-100">
+              <button type="button" onClick={() => setStep(step - 1)} className="px-6 py-2.5 rounded-lg font-medium text-slate-600 hover:bg-slate-100 text-white">
                 Back
               </button>
             ) : <div />}
 
             {step < 4 ? (
-              <button 
-                type="button" 
-                onClick={() => setStep(step + 1)} 
+              <button
+                type="button"
+                onClick={() => setStep(step + 1)}
                 className="px-8 py-2.5 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200"
               >
                 Next Step
               </button>
             ) : (
-              <button 
-                type="submit" 
-                disabled={loading || !canSubmit} 
+              <button
+                type="submit"
+                disabled={loading || !canSubmit}
                 className={`px-8 py-2.5 rounded-lg font-bold text-white shadow-lg transition-all duration-300
                   ${canSubmit ? 'bg-emerald-500 hover:bg-emerald-600 shadow-emerald-200' : 'bg-slate-300 shadow-none cursor-not-allowed'}
                 `}

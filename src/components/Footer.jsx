@@ -42,7 +42,7 @@ export default function Footer() {
 
                 {/* Divider */}
                 <div className="mt-10 border-t border-slate-200 pt-6 text-center text-sm text-slate-400">
-                    © 2025 PPD Project
+                    © 2025 PPD Project Kelompok 5
                 </div>
             </div>
         </footer>
