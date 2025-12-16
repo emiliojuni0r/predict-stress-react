@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// --- KOMPONEN UI: RADIO GROUP (TAILWIND) ---
+// radio grup component
 const RadioGroup = ({ label, name, options, value, onChange, required = true }) => (
   <div className="mb-6 p-6 bg-white rounded-xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
     <p className="font-semibold text-slate-800 mb-4 text-sm md:text-base">{label}</p>
