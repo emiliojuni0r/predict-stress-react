@@ -1,13 +1,41 @@
-export default function Navbar({ onTakeAssessment }) {
+export default function Navbar() {
     return (
-        <nav className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto bg-slate-50">
-            <h1 className="text-2xl font-bold text-blue-600 tracking-tight">LeCheckUrStressLevel.</h1>
-            <button
-                onClick={onTakeAssessment}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all active:scale-95 shadow-md shadow-blue-100"
-            >
-                Take Assessment
-            </button>
+        <nav className="bg-slate-50 border-b border-slate-200">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                
+                {/* Logo */}
+                <h1 className="text-2xl font-bold text-blue-600 tracking-tight">
+                    PPD.
+                </h1>
+
+                {/* Menu */}
+                <ul className="flex gap-6 text-slate-700 font-medium">
+                    <li>
+                        <a
+                            href="#hero"
+                            className="hover:text-blue-600 transition"
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#why-aware"
+                            className="hover:text-blue-600 transition"
+                        >
+                            Why Aware
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#footer"
+                            className="hover:text-blue-600 transition"
+                        >
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     )
 }
