@@ -9,7 +9,7 @@ function App() {
   const [showForm, setShowForm] = useState(false)
 
   return (
-    <div className="w-screen min-h-screen bg-white font-sans text-slate-900">
+    <div className="w-screen min-h-screen bg-white font-sans text-slate-900 pe-n-6">
 
       <Navbar />
 
